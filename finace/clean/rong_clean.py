@@ -32,7 +32,7 @@ class CleanRongList(object):
         mongo_page = int(math.ceil(mongo_count / limit))
         meter = tqdm(initial=0, total=mongo_count, ascii=True)
         for page in range(0, mongo_page + 1):
-            for data in self.mongo.read(page, limit):
+            for data in self.mongo.read(page, limit, query):
                 self.clear(data)
                 meter.update(1)
             self.mysql.end("commit")

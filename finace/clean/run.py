@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
+import sys
 
+sys.path.append("/opt/drch_spider/spider/finace")
 from finace.clean.rong_clean import CleanRongList
 from finace.clean.update_tag import CleanRongTag
 from finace.utils.mysql_db import MysqlPool

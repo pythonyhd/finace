@@ -17,11 +17,11 @@ class MongoClient(object):
         """
         return self.table.find({}).count()
 
-    def read(self, page, limit):
+    def read(self, page, limit, query={}):
         """
         分页读取MongoDB数据
         :param page: 页码
         :param limit: 限制
         :return: mongo对象
         """
-        return self.table.find().skip(page * limit).limit(limit)
+        return self.table.find(query).skip(page * limit).limit(limit)
